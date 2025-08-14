@@ -106,6 +106,14 @@
   gap: 3rem;
 }
 
+.home-page-image {
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .gradient-text {
   background: linear-gradient(275deg, #0bb0bc 0%, #057e91 30%, #c01024 70%, #581521 100%);
   -webkit-background-clip: text;
