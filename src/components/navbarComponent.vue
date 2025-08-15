@@ -54,6 +54,7 @@ const closeMenu = () => {
 <style scoped>
 .navbar-container {
   position: relative;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .menu-toggle {
@@ -69,6 +70,7 @@ const closeMenu = () => {
   cursor: pointer;
   font-size: 1.5em;
   transition: transform 0.2s ease;
+  font-weight: 500;
 }
 
 .menu-toggle:hover {
