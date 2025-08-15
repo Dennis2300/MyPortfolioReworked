@@ -1,7 +1,7 @@
 <template>
   <div class="navbar-container">
     <!-- Toggle button with dynamic icon -->
-    <button class="menu-toggle" @click="toggleMenu">{{ isMenuOpen ? '✕' : '☰ Menu' }} </button>
+    <button class="menu-toggle" @click="toggleMenu">{{ isMenuOpen ? '✕' : '☰ Menu' }}</button>
 
     <!-- Navbar shelf -->
     <nav class="navbar" :class="{ active: isMenuOpen }">
@@ -14,6 +14,10 @@
       >
         {{ link.name }}
       </router-link>
+      <div class="nav-separator"></div>
+      <router-link to="/about" @click="closeMenu" class="nav-link">About</router-link>
+      <router-link to="/contact" @click="closeMenu" class="nav-link">Contact</router-link>
+      <router-link to="/projects" @click="closeMenu" class="nav-link">Other Projects</router-link>
     </nav>
 
     <!-- Overlay -->
@@ -163,5 +167,11 @@ const closeMenu = () => {
 }
 .navbar.active .nav-link:nth-child(6) {
   animation-delay: 0.35s;
+}
+
+.nav-separator {
+  height: 1px;
+  background-color: #7f8c8d;
+  margin: 10px 0;
 }
 </style>
