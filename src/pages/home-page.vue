@@ -19,11 +19,15 @@
       <div class="home-page-section">
         <div class="home-page-section-title-container">
           <div class="country-list">
-            <div class="country-list-button">Denmark</div>
-            <div class="country-list-button">China</div>
-            <div class="country-list-button">Greece</div>
-            <div class="country-list-button">Italy</div>
-            <div class="country-list-button">Netherlands</div>
+            <div
+              v-for="country in countries"
+              :key="country"
+              class="country-list-button"
+              :class="{ 'active-country': selectedCountry === country }"
+              @click="selectCountry(country)"
+            >
+              {{ country }}
+            </div>
           </div>
         </div>
         <div class="home-page-images-container">
@@ -36,7 +40,18 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+
+const countries = ['Denmark', 'Germany', 'Netherlands', 'Greece', 'China']
+
+const selectedCountry = ref('Denmark')
+
+const selectCountry = (country) => {
+  selectedCountry.value = country
+  console.log(selectedCountry.value)
+}
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -125,6 +140,12 @@
 .country-list-button:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.country-list-button.active-country::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-color: white;
 }
 
 .home-page-images-container {
