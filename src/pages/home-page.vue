@@ -19,11 +19,11 @@
       <div class="home-page-section">
         <div class="home-page-section-title-container">
           <div class="country-list">
-            <div>Denmark</div>
-            <div>China</div>
-            <div>Greece</div>
-            <div>Italy</div>
-            <div>Netherlands</div>
+            <div class="country-list-button">Denmark</div>
+            <div class="country-list-button">China</div>
+            <div class="country-list-button">Greece</div>
+            <div class="country-list-button">Italy</div>
+            <div class="country-list-button">Netherlands</div>
           </div>
         </div>
         <div class="home-page-images-container">
@@ -98,6 +98,33 @@
   margin-bottom: 5rem;
   font-size: 2.5em;
   letter-spacing: 1.5px;
+}
+
+.country-list-button {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  padding-bottom: 4px;
+  cursor: pointer;
+}
+
+.country-list-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.country-list-button:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .home-page-images-container {
