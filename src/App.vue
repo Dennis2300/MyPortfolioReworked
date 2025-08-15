@@ -1,9 +1,10 @@
 <template>
-  <HomePage />
+  <NavBar />
+  <router-view />
+  <Footer />
 </template>
 
 <script setup>
-import HomePage from './pages/Home-page.vue'
+import NavBar from './components/navbarComponent.vue';
+import Footer from './components/footerComponent.vue';
 </script>
-
-<style scoped></style>
